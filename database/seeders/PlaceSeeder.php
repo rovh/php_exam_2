@@ -15,24 +15,24 @@ class PlaceSeeder extends Seeder
     public function run()
     {
         $place = new Place();
-        $place->name = 'inventory';
-        $place->description = 'Place for new things';
-        $place->repair = false;
+        $place->name = 'Station 1';
+        $place->description = 'Ваши вещи еще чинятся';
+        $place->repair = true;
         $place->work = false; 
         $place->save();
 
         $work = new Place();
-        $work->name = 'work';
-        $work->description = 'Your thing is working';
+        $work->name = 'Place 2';
+        $work->description = 'Вещи еще в работе';
         $work->repair = false;
         $work->work = true; 
         $work->save();
 
         $repair = new Place();
-        $repair->name = 'repair';
-        $repair->description = 'Your thing is repairing';
+        $repair->name = 'Area 3';
+        $repair->description = 'Вещи чинятся и в работе';
         $repair->repair = true;
-        $repair->work = false; 
+        $repair->work = true; 
         $repair->save();
     }
 }

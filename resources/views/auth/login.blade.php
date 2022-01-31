@@ -6,7 +6,7 @@
 <form action="/custom-login" method="post">
     @csrf
     <div><br><br>
-    <label>Введите: Имя пользователя</label><br>
+    <label>Введите: Имя почту</label><br>
         <input type="email" name="email" id="email" placeholder="Введите e-mail"><br><br>
         <label>Введите: Пароль</label><br>
         <input type="password" name="password" id="password"><br>        
