@@ -17,10 +17,10 @@ class CreateThings extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->date('wrnt');
             $table->integer('master');
-            $table->timestamp('updated_at');
+            $table->date('wrnt');
             $table->timestamp('created_at');
+            $table->timestamp('updated_at');
         });
     }
 

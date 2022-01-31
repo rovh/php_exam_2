@@ -16,6 +16,21 @@ class UseController extends Controller
         return view('uses/update')->with('uses', $uses);
     }
 
+    
+    public function update(Request $request, $id){
+        $use = UseModel::findOrFail($id);
+        $use->place_id=request('place_id'); 
+        $use->save();
+        // return response()->json(['use' => $use]);
+        return redirect('/uses');
+    }
+
+    public function show(){
+        $uses=UseModel::take(PHP_INT_MAX)->get();
+        // return response()->json(['places'=>$places]);
+        return view('uses/show')->with('uses',$uses);
+    }
+
     public function give(Request $request){
         // , $thing_id, $to_id
         $request->validate([
@@ -80,17 +95,4 @@ class UseController extends Controller
         }
     }
 
-    public function update(Request $request, $id){
-        $use = UseModel::findOrFail($id);
-        $use->place_id=request('place_id'); 
-        $use->save();
-        // return response()->json(['use' => $use]);
-        return redirect('/uses');
-    }
-
-    public function show(){
-        $uses=UseModel::take(PHP_INT_MAX)->get();
-        // return response()->json(['places'=>$places]);
-        return view('uses/show')->with('uses',$uses);
-    }
 }

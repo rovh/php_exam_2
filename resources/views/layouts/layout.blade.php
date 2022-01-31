@@ -10,6 +10,7 @@
 <body align="center">
     <nav class="navigation">
         <ul class="navigation_main">
+            
             <li><a href="/" class="navigation_link">Главная</a></li>
             @if(Auth::guest())
                 <li><a href="/login"  class="navigation_link">Вход </a></li>
@@ -19,6 +20,7 @@
                 <li><a href="/places" class="navigation_link">Места</a></li>
                 <li><a href="/uses" class="navigation_link">Использование</a></li>
                 <li><a href="/logout" class="navigation_link">Выйти</a></li>
+                <li>Ваш идентификатор: {{auth()->user()->id}}</li>
             @endif
         </ul>
         <br><br>

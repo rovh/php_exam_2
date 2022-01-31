@@ -80,6 +80,18 @@ class ThingController extends Controller
         }
     }
 
+    
+    public function showExact($id){
+        return response(Thing::findOrFail($id));
+    }
+
+    public function show(){
+        $things=Thing::paginate(5);
+        // return response()->json(['things'=>$things]);
+        return view('things/show')->with('things',$things); 
+    }
+
+
     public function update(Request $request,$id){
         $request->validate([
             'name'=>'required',
@@ -106,13 +118,4 @@ class ThingController extends Controller
         }
     }
 
-    public function showExact($id){
-        return response(Thing::findOrFail($id));
-    }
-
-    public function show(){
-        $things=Thing::paginate(5);
-        // return response()->json(['things'=>$things]);
-        return view('things/show')->with('things',$things); 
-    }
 }

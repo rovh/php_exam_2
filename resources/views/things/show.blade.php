@@ -14,7 +14,7 @@
         @endif
         <li>Название вещи: {{$thing->name}}</li>
         <li>Описание: {{$thing->description}}</li>
-        <li>Срок годности: {{$thing->wrnt}}</li>
+        <li>Срок годности до: {{$thing->wrnt}}</li>
         <li>Идентификатор создателя: {{$thing->master}}</li>
     </ul>
     <a href="/deletething/{{$thing->id}}">Удалить вещь</a>

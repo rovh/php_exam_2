@@ -15,15 +15,13 @@ class AuthController extends Controller
         return view('auth.registration');
     }
 
-    public function indexlogin(){
-        return view('auth.login');
-    }
+    
 
     public function customRegistration(Request $request){
         $request->validate([
             'name'=>'required',
             'email'=>'required|email|unique:App\Models\User,email',
-            'password'=>'required|min:6'
+            'password'=>'required|min:3'
         ]);
 
         $user = User::create([
@@ -73,5 +71,10 @@ class AuthController extends Controller
         Session::flush();
         Auth::logout();
         return redirect('login');
+    }
+
+
+    public function indexlogin(){
+        return view('auth.login');
     }
 }

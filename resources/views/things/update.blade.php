@@ -9,7 +9,7 @@
             <input type="text" name="name" id="name" placeholder="Введите название" value="{{$things->name}}"><br><br><br>
             <label for="description">Описание</label><br>
             <input type="text" name="description" id="description" value="{{$things->description}}"><br><br><br>
-            <label for="wrnt">Срок годности</label><br>
+            <label for="wrnt">Срок годности до</label><br>
             <input type="text" name="wrnt" id="wrnt" value="{{$things->wrnt}}"><br><br><br>
         </div>
 

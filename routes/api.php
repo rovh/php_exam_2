@@ -18,12 +18,32 @@ use App\Http\Controllers\UseController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+
+
+
+Route::group(['prefix' => '/place', 'middleware'=>'auth:sanctum'], function(){
+    Route::get('', [PlaceController::class, 'show']);
+    Route::post('', [PlaceController::class, 'create']);
+    Route::delete('/{id}', [PlaceController::class, 'delete']);
+    Route::post('/{id}', [PlaceController::class, 'update']);
 });
 
-Route::post('/login', [AuthController::class, 'login']);
-Route::post('/reg', [AuthController::class, 'customRegistration']);
+
+
+
+
+
+
+Route::middleware('auth:sanctum')->post('/use/{thing_id}/give/{to_id}', [UseController::class, 'give']);
+Route::middleware('auth:sanctum')->post('/use/{id}', [UseController::class, 'update']);
+
+
+
+
+
+
+
 
 Route::group(['prefix' => '/thing', 'middleware'=>'auth:sanctum'], function(){
     Route::get('', [ThingController::class, 'show']);
@@ -33,12 +53,19 @@ Route::group(['prefix' => '/thing', 'middleware'=>'auth:sanctum'], function(){
     Route::post('/{id}', [ThingController::class, 'update']);
 });
 
-Route::group(['prefix' => '/place', 'middleware'=>'auth:sanctum'], function(){
-    Route::get('', [PlaceController::class, 'show']);
-    Route::post('', [PlaceController::class, 'create']);
-    Route::delete('/{id}', [PlaceController::class, 'delete']);
-    Route::post('/{id}', [PlaceController::class, 'update']);
+
+
+
+
+
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/reg', [AuthController::class, 'customRegistration']);
+
+
+
+
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
 });
 
-Route::middleware('auth:sanctum')->post('/use/{thing_id}/give/{to_id}', [UseController::class, 'give']);
-Route::middleware('auth:sanctum')->post('/use/{id}', [UseController::class, 'update']);

@@ -14,6 +14,7 @@ class PlaceSeeder extends Seeder
      */
     public function run()
     {
+
         $place = new Place();
         $place->name = 'Area 1';
         $place->description = 'Ващи вещи чинятся';
