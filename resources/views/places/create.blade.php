@@ -6,9 +6,10 @@
 
         <h1>Создание места</h1>
         <div>
-            <input type="text" name="name" id="name" placeholder="Введите название">
-            <label for="description">Описание</label>
-            <input type="text" name="description" id="description">
+            <label for="description">Введите: Название места</label><br>
+            <input type="text" name="name" id="name" placeholder="Введите название"><br><br><br>
+            <label for="description">Введите: Описание</label><br>
+            <input type="text" name="description" id="description"><br><br><br>
         </div>
 
         <button type="submit">Отправить</button>

@@ -6,11 +6,13 @@
 
         <h1>Создание вещи</h1>
         <div>
-            <input type="text" name="name" id="name" placeholder="Введите название">
-            <label for="description">Описание</label>
-            <input type="text" name="description" id="description">
-            <label for="wrnt">Срок годности</label>
-            <input type="text" name="wrnt" id="wrnt">
+            <br>
+            <label for="description">Введите: Название</label><br>
+            <input type="text" name="name" id="name" placeholder="Введите название"><br><br><br>
+            <label for="description">Введите: Описание</label><br>
+            <input type="text" name="description" id="description"><br><br><br>
+            <label for="wrnt">Введите: Срок годности</label><br>
+            <input type="text" name="wrnt" id="wrnt"><br><br><br>
         </div>
 
         <button type="submit">Отправить</button>

@@ -1,7 +1,9 @@
 @extends('layouts.layout')
 @section('content')
-    <a href="/createplace">Создать место</a>
+    <br>
+    <a href="/createplace" >Создать место</a>
     @foreach($places as $place)
+    <br><br><br>
     <ul>
         <li>Название места: {{$place->name}}</li>
         <li>Описание: {{$place->description}}</li>
@@ -11,6 +13,7 @@
     </ul>
     <a href="/deleteplace/{{$place->id}}">Удалить место</a>
     <a href="/updateplace/{{$place->id}}">Изменить место</a>
+    <br><br><br><br><br>
     @endforeach
 
 

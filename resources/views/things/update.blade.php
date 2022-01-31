@@ -6,11 +6,11 @@
 
         <h1>Изменение вещи</h1>
         <div>
-            <input type="text" name="name" id="name" placeholder="Введите название" value="{{$things->name}}">
-            <label for="description">Описание</label>
-            <input type="text" name="description" id="description" value="{{$things->description}}">
-            <label for="wrnt">Срок годности</label>
-            <input type="text" name="wrnt" id="wrnt" value="{{$things->wrnt}}">
+            <input type="text" name="name" id="name" placeholder="Введите название" value="{{$things->name}}"><br><br><br>
+            <label for="description">Описание</label><br>
+            <input type="text" name="description" id="description" value="{{$things->description}}"><br><br><br>
+            <label for="wrnt">Срок годности</label><br>
+            <input type="text" name="wrnt" id="wrnt" value="{{$things->wrnt}}"><br><br><br>
         </div>
 
         <button type="submit">Отправить</button>
